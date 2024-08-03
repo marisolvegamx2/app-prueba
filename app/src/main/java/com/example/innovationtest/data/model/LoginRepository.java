@@ -74,7 +74,6 @@ public class LoginRepository {
                     if(logResp.getStatus().equals("success")) //correcto
                     {
 
-
                         setLoggedInUser(logResp.getData());
                         listener.correcto(user);
                     }
@@ -84,7 +83,7 @@ public class LoginRepository {
                     }
 
                 }else{
-
+                    listener.incorrecto(null);
                 }
             }
 

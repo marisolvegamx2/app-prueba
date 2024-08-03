@@ -111,8 +111,6 @@ public class LoginActivity extends AppCompatActivity {
     public void entrar() {
         Constantes.LOGGEADO = true;
         loadingProgressBar.setVisibility(View.GONE);
-
-        Log.d("LoginActivity","entre");
         //mando a la siguiente actividad
         Intent intento=new Intent(this, MainActivity.class);
         startActivity(intento);

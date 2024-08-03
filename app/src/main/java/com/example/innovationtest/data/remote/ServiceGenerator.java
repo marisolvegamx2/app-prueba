@@ -26,8 +26,8 @@ public class ServiceGenerator {
         OkHttpClient httpClient;
 
              httpClient = okbuilder
-                    .readTimeout(90, TimeUnit.SECONDS)
-                    .connectTimeout(15, TimeUnit.SECONDS)
+                    .readTimeout(10, TimeUnit.SECONDS)
+                    .connectTimeout(10, TimeUnit.SECONDS)
                     .build();
 
 
