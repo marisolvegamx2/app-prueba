@@ -2,33 +2,24 @@ package com.example.innovationtest.ui.home;
 
 
 import static com.example.innovationtest.ui.home.DetailFragment.ARG_ID;
-
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
-
 import androidx.fragment.app.Fragment;
-
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.example.innovationtest.MainActivity;
 import com.example.innovationtest.R;
 import com.example.innovationtest.data.model.Employee;
 import com.example.innovationtest.databinding.FragmentListBinding;
 
 import java.util.List;
-import java.util.prefs.AbstractPreferences;
+
 
 public class ListFragment extends Fragment implements EmployeeAdapter.AdapterCallback {
 
@@ -43,7 +34,7 @@ public class ListFragment extends Fragment implements EmployeeAdapter.AdapterCal
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         mBinding= FragmentListBinding.inflate(inflater,
-                container,true);
+                container,false);
         mViewModel = new ViewModelProvider(this).get(ListViewModel.class);
         return    mBinding.getRoot();
     }
@@ -69,10 +60,6 @@ public class ListFragment extends Fragment implements EmployeeAdapter.AdapterCal
         mViewModel.getEmpleados().observe(getViewLifecycleOwner(), new Observer<List<Employee>>() {
             @Override
             public void onChanged(List<Employee> lista) {
-
-
-
-
 
                 mListAdapter.setList(lista);
                     //mListAdapter.setProductoList(informesfinal);
